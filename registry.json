@@ -1,0 +1,62 @@
+{
+  "schema": "hearth-registry/1.0",
+  "spec": "rapp-static-api/1.1",
+  "generated": "2026-11-04T17:47:29Z",
+  "pages": "https://wildhaven-homes-llc.github.io/hearth/",
+  "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/",
+  "release": {
+    "schema": "hearth-release/1.0",
+    "name": "Wildhaven Hearth",
+    "version": "1.0.0",
+    "kernel": {
+      "what": "the Brainstem engine (the grail), used exactly as published, never edited",
+      "repository": "kody-w/rapp-installer",
+      "file": "brainstem.py",
+      "sha256": "35618683ebc3d1c2bfaff47f60182fd756f3a8de53c53dd907ec1099d631930a",
+      "version": "0.6.16"
+    },
+    "grail_layers": {
+      "repository": "kody-w/grail-layers",
+      "revision": "7e035a4aa5ca234b5cb0111de981b77a622a3a4e"
+    },
+    "catalog": {
+      "repository": "kody-w/RAR",
+      "revision": "f86f847951640fc99337b69c81f2baf2273d0cd7",
+      "pack": "wildhaven-hearth"
+    }
+  },
+  "summary": {
+    "files": 4,
+    "version": "1.0.0"
+  },
+  "entries": [
+    {
+      "name": "install.sh",
+      "sha256": "03bd0fa825e7e542b189ef5405c250da95512d279576ea160e60d5af0f861801",
+      "url": "https://wildhaven-homes-llc.github.io/hearth/install.sh",
+      "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/install.sh",
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/install/03bd0fa8.sh"
+    },
+    {
+      "name": "release.json",
+      "sha256": "11816f51a856eaefde410cf8db99b8664d463e4ba9b3c68c29a8af273a229603",
+      "url": "https://wildhaven-homes-llc.github.io/hearth/release.json",
+      "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/release.json",
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/release/11816f51.json"
+    },
+    {
+      "name": "README.md",
+      "sha256": "559f90c25df9acdf366cb30d08fb89564118ce9ae2a73bf861955400074ea346",
+      "url": "https://wildhaven-homes-llc.github.io/hearth/README.md",
+      "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/README.md",
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/README/559f90c2.md"
+    },
+    {
+      "name": "llms.txt",
+      "sha256": "997ac9b51f8ae41b7430b6f07fdc1845fede2ad1232d0441856ccf3c39688d3d",
+      "url": "https://wildhaven-homes-llc.github.io/hearth/llms.txt",
+      "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/llms.txt",
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/llms/997ac9b5.txt"
+    }
+  ]
+}

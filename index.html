@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven Hearth</title>
+<meta name="description" content="Your own AI at home on your computer, that looks after itself. By Wildhaven Homes.">
+<style>
+  :root { --ink:#2b2118; --soft:#6b5a4a; --warm:#c8642c; --bg:#fbf6ef; --card:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:760px; margin:0 auto; padding:64px 24px 48px; }
+  .mark { font-size:44px; }
+  h1 { font-size:44px; line-height:1.1; margin:8px 0 12px; letter-spacing:-0.02em; }
+  .lede { font-size:21px; color:var(--soft); margin:0 0 36px; }
+  .install { background:var(--card); border-radius:16px; padding:22px; box-shadow:0 6px 30px rgba(60,40,20,.08); }
+  .install p { margin:0 0 12px; font-weight:600; }
+  .row { display:flex; gap:10px; align-items:stretch; }
+  code { flex:1; display:block; background:#2b2118; color:#fbe9d7; padding:14px 16px; border-radius:10px; font:14px/1.4 ui-monospace, Menlo, monospace; overflow-x:auto; white-space:nowrap; }
+  button { border:0; border-radius:10px; padding:0 22px; background:var(--warm); color:#fff; font-weight:700; font-size:16px; cursor:pointer; }
+  button:focus-visible { outline:3px solid #2b2118; outline-offset:2px; }
+  .ai { margin:14px 0 0; font-size:15px; color:var(--soft); }
+  ul { list-style:none; padding:0; margin:40px 0; display:grid; gap:14px; }
+  li { background:var(--card); border-radius:14px; padding:16px 18px; }
+  li b { display:block; }
+  details { margin-top:24px; color:var(--soft); font-size:15px; }
+  footer { margin-top:48px; font-size:14px; color:var(--soft); }
+  a { color:var(--warm); }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark" aria-hidden="true">🔥</div>
+  <h1>Wildhaven Hearth</h1>
+  <p class="lede">Your own AI, at home on your computer, that looks after itself.</p>
+
+  <section class="install" aria-label="Install">
+    <p>Paste this into Terminal on a Mac:</p>
+    <div class="row">
+      <code id="line">curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash</code>
+      <button type="button" id="copy">Copy</button>
+    </div>
+    <p class="ai">Rather not use Terminal? Ask GitHub Copilot (Agent mode) with the
+      <a href="https://kody-w.github.io/grail-layers/skills/rar-easy-mode/SKILL.md">Easy Mode skill</a>:
+      “Give me wildhaven-hearth using RAR Easy Mode and test it for me.”</p>
+  </section>
+
+  <ul>
+    <li><b>It never drops the conversation.</b>Adding, removing or updating anything happens while it keeps answering.</li>
+    <li><b>Add what you need, take out what you don't.</b>Every pack installs and uninstalls cleanly. Nothing else breaks.</li>
+    <li><b>It looks after itself.</b>It watches its computer, keeps private topics at home, and knows who inherits it.</li>
+    <li><b>Your data stays yours.</b>It lives on your computer, not in someone else's cloud.</li>
+  </ul>
+
+  <details>
+    <summary>Details</summary>
+    <p id="rel">Release details load from <a href="registry.json">registry.json</a>.</p>
+    <p>Hearth runs the Brainstem engine exactly as published and adds everything around it, each piece pinned to one
+      exact version. For AIs: <a href="llms.txt">llms.txt</a>.</p>
+  </details>
+
+  <footer>Wildhaven Homes LLC</footer>
+</main>
+<script>
+  document.getElementById("copy").onclick = function () {
+    var b = this, t = document.getElementById("line").textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () {
+      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
+    });
+  };
+  fetch("registry.json").then(function (r) { return r.json(); }).then(function (reg) {
+    var r = reg.release;
+    document.getElementById("rel").textContent = "Version " + r.version + ". Brainstem engine " +
+      r.kernel.sha256.slice(0, 12) + " (unchanged), layers " + r.grail_layers.revision.slice(0, 7) +
+      ", catalog " + r.catalog.revision.slice(0, 7) + ".";
+  }).catch(function () {});
+</script>
+</body>
+</html>

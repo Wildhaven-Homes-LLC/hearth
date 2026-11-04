@@ -1,0 +1,10 @@
+# Wildhaven Hearth
+> Your own AI at home on your computer that looks after itself: it never drops the conversation, every pack installs and
+> uninstalls cleanly, and the Brainstem engine runs exactly as published. By Wildhaven Homes.
+
+Release: 1.0.0 (engine sha256 35618683ebc3, grail-layers 7e035a4, RAR f86f847)
+Install: curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash
+Any AI (GitHub Copilot Agent mode by default): https://kody-w.github.io/grail-layers/skills/rar-easy-mode/SKILL.md
+Index (JSON): https://wildhaven-homes-llc.github.io/hearth/registry.json
+Release pins: https://wildhaven-homes-llc.github.io/hearth/release.json
+Rules for any AI: https://kody-w.github.io/RAR/RAPP.md
