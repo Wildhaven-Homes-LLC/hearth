@@ -1,7 +1,7 @@
 {
   "schema": "hearth-registry/1.0",
   "spec": "rapp-static-api/1.1",
-  "generated": "2026-11-04T19:15:46Z",
+  "generated": "2026-11-04T20:16:34Z",
   "pages": "https://wildhaven-homes-llc.github.io/hearth/",
   "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/",
   "release": {
@@ -26,7 +26,7 @@
     }
   },
   "summary": {
-    "files": 4,
+    "files": 5,
     "version": "1.0.1"
   },
   "entries": [
@@ -53,10 +53,17 @@
     },
     {
       "name": "llms.txt",
-      "sha256": "e8122aac6980fa9b2e41a7a148e640771d254f2684a9cf4224fe717464b879e4",
+      "sha256": "7381e8f1533e46f031ccb6966d4294e130644e23a2618aafc8fd7e092886141c",
       "url": "https://wildhaven-homes-llc.github.io/hearth/llms.txt",
       "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/llms.txt",
-      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/llms/e8122aac.txt"
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/llms/7381e8f1.txt"
+    },
+    {
+      "name": "skill.md",
+      "sha256": "2c53350a766350d16ac94281f74d6cda9d12e272cc8399560c2287a8d8121929",
+      "url": "https://wildhaven-homes-llc.github.io/hearth/skill.md",
+      "raw": "https://raw.githubusercontent.com/Wildhaven-Homes-LLC/hearth/main/skill.md",
+      "version_url": "https://wildhaven-homes-llc.github.io/hearth/versions/skill/2c53350a.md"
     }
   ]
 }

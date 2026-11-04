@@ -4,6 +4,8 @@
 
 Release: 1.0.1 (engine sha256 bd55a7f0bcf5, grail-layers 93068e6, RAR 688bf5d)
 Install: curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash
+Guide for AIs (install, verify, add, remove): https://wildhaven-homes-llc.github.io/hearth/skill.md
+API front door: https://wildhaven-homes-llc.github.io/hearth/api/v1/index.json
 Any AI (GitHub Copilot Agent mode by default): https://kody-w.github.io/grail-layers/skills/rar-easy-mode/SKILL.md
 Index (JSON): https://wildhaven-homes-llc.github.io/hearth/registry.json
 Release pins: https://wildhaven-homes-llc.github.io/hearth/release.json
