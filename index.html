@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wildhaven Hearth</title><meta name="description" content="Your own AI, at home on your computer, that looks after itself. By Wildhaven Homes.">
-<link rel="icon" href="img/mark.svg"><meta property="og:image" content="img/hero.jpg">
+<link rel="help" href="skill.md" title="Guide for AIs"><link rel="alternate" type="application/json" href="api/v1/index.json"><link rel="icon" href="img/mark.svg"><meta property="og:image" content="img/hero.jpg">
 <style>:root{--ink:#241a12;--soft:#6b5a4a;--warm:#c8642c;--cream:#fbf6ef;--line:#eadfd1}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:18px/1.6 "Iowan Old Style","Palatino Linotype",Georgia,serif;color:var(--ink);background:var(--cream)}
@@ -58,5 +58,6 @@ show.onclick=function(){cmd.classList.add("on");this.style.display="none"};
 copy.onclick=function(){var b=this;navigator.clipboard.writeText(line.textContent).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1500)})};
 fetch("registry.json").then(function(r){return r.json()}).then(function(g){var r=g.release;rel.insertAdjacentText("beforeend"," · Version "+r.version+", engine "+r.kernel.sha256.slice(0,12)+" (unchanged)")}).catch(function(){});
 </script>
+<p class="sans" style="max-width:1100px;margin:0 auto;padding:0 5vw 24px;font-size:14px;color:var(--soft)">For AIs: read <a href="skill.md">skill.md</a> (install, check, add or remove Hearth for your person) · <a href="llms.txt">llms.txt</a> · <a href="api/v1/index.json">API</a>.</p>
 <footer><span>© 2026 Wildhaven Homes LLC</span><a href="mailto:wildhavenhomesllc@gmail.com">Contact</a></footer>
 </body></html>
