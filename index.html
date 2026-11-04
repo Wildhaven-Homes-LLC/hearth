@@ -32,7 +32,7 @@ h2{font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.15;margin:0 0 
 .cmd a{color:#f0a978}
 footer{border-top:1px solid var(--line);max-width:1100px;margin:0 auto;padding:30px 5vw 50px;display:flex;justify-content:space-between;color:var(--soft);font-size:14px}
 footer a{color:var(--soft)}
-</style></head><body>
+.diorama{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center;padding-top:40px}#scene{height:460px}@media(max-width:800px){.diorama{grid-template-columns:1fr}#scene{height:360px}}</style></head><body>
 <nav><a class="brand" href="https://wildhaven-homes-llc.github.io/"><img src="img/mark.svg" alt="">Wildhaven</a>
 <a class="link" href="https://wildhaven-homes-llc.github.io/hearth/">Hearth</a></nav>
 <header class="hero"><div class="in"><p class="eyebrow">Wildhaven Hearth · Free for Mac</p><h1>Your own AI, at home.</h1><p class="lede">It runs on your computer, never drops the conversation, and takes care of itself so you don't have to.</p><a class="btn" href="#get">Get Hearth</a></div></header>
@@ -41,7 +41,12 @@ footer a{color:var(--soft)}
 <div><span class="num">01</span><h3>It never drops the conversation</h3><p>Adding, removing or updating anything happens while it keeps answering you.</p></div>
 <div><span class="num">02</span><h3>It looks after itself</h3><p>It watches over its computer, keeps itself current, and knows who it belongs to.</p></div>
 <div><span class="num">03</span><h3>Your life stays at home</h3><p>It lives on your computer, not in someone else's cloud. Private things stay private.</p></div>
-</div></section><div class="band" id="get"><section><h2>Bring Hearth home.</h2><p>Free for Mac. It takes about five minutes, and you can remove it cleanly any time.</p>
+</div></section><section class="diorama"><div><p class="eyebrow" style="color:var(--warm)">How it feels</p><h2>It keeps the home running, so you don't have to.</h2>
+<p style="color:var(--soft);max-width:28em">Hearth watches over its computer, stays up to date, and keeps the lights on while you get on with your day.</p></div>
+<div id="scene" aria-hidden="true"></div></section>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module" src="scene.js"></script>
+<div class="band" id="get"><section><h2>Bring Hearth home.</h2><p>Free for Mac. It takes about five minutes, and you can remove it cleanly any time.</p>
 <button class="btn" id="show">Get Hearth for Mac</button>
 <div class="cmd" id="cmd"><code id="line">curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash</code>
 <small>Open Terminal, paste this line, press Return. <button class="btn" id="copy" style="padding:6px 14px;font-size:13px">Copy</button><br>
