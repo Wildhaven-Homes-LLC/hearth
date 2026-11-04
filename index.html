@@ -1,79 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wildhaven Hearth</title>
-<meta name="description" content="Your own AI at home on your computer, that looks after itself. By Wildhaven Homes.">
-<style>
-  :root { --ink:#2b2118; --soft:#6b5a4a; --warm:#c8642c; --bg:#fbf6ef; --card:#fff; }
-  * { box-sizing:border-box; }
-  body { margin:0; font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--bg); }
-  main { max-width:760px; margin:0 auto; padding:64px 24px 48px; }
-  .mark { font-size:44px; }
-  h1 { font-size:44px; line-height:1.1; margin:8px 0 12px; letter-spacing:-0.02em; }
-  .lede { font-size:21px; color:var(--soft); margin:0 0 36px; }
-  .install { background:var(--card); border-radius:16px; padding:22px; box-shadow:0 6px 30px rgba(60,40,20,.08); }
-  .install p { margin:0 0 12px; font-weight:600; }
-  .row { display:flex; gap:10px; align-items:stretch; }
-  code { flex:1; display:block; background:#2b2118; color:#fbe9d7; padding:14px 16px; border-radius:10px; font:14px/1.4 ui-monospace, Menlo, monospace; overflow-x:auto; white-space:nowrap; }
-  button { border:0; border-radius:10px; padding:0 22px; background:var(--warm); color:#fff; font-weight:700; font-size:16px; cursor:pointer; }
-  button:focus-visible { outline:3px solid #2b2118; outline-offset:2px; }
-  .ai { margin:14px 0 0; font-size:15px; color:var(--soft); }
-  ul { list-style:none; padding:0; margin:40px 0; display:grid; gap:14px; }
-  li { background:var(--card); border-radius:14px; padding:16px 18px; }
-  li b { display:block; }
-  details { margin-top:24px; color:var(--soft); font-size:15px; }
-  footer { margin-top:48px; font-size:14px; color:var(--soft); }
-  a { color:var(--warm); }
-</style>
-</head>
-<body>
-<main>
-  <div class="mark" aria-hidden="true">🔥</div>
-  <h1>Wildhaven Hearth</h1>
-  <p class="lede">Your own AI, at home on your computer, that looks after itself.</p>
-
-  <section class="install" aria-label="Install">
-    <p>Paste this into Terminal on a Mac:</p>
-    <div class="row">
-      <code id="line">curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash</code>
-      <button type="button" id="copy">Copy</button>
-    </div>
-    <p class="ai">Rather not use Terminal? Ask GitHub Copilot (Agent mode) with the
-      <a href="https://kody-w.github.io/grail-layers/skills/rar-easy-mode/SKILL.md">Easy Mode skill</a>:
-      “Give me wildhaven-hearth using RAR Easy Mode and test it for me.”</p>
-  </section>
-
-  <ul>
-    <li><b>It never drops the conversation.</b>Adding, removing or updating anything happens while it keeps answering.</li>
-    <li><b>Add what you need, take out what you don't.</b>Every pack installs and uninstalls cleanly. Nothing else breaks.</li>
-    <li><b>It looks after itself.</b>It watches its computer, keeps private topics at home, and knows who inherits it.</li>
-    <li><b>Your data stays yours.</b>It lives on your computer, not in someone else's cloud.</li>
-  </ul>
-
-  <details>
-    <summary>Details</summary>
-    <p id="rel">Release details load from <a href="registry.json">registry.json</a>.</p>
-    <p>Hearth runs the Brainstem engine exactly as published and adds everything around it, each piece pinned to one
-      exact version. For AIs: <a href="llms.txt">llms.txt</a>.</p>
-  </details>
-
-  <footer>Wildhaven Homes LLC</footer>
-</main>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven Hearth</title><meta name="description" content="Your own AI, at home on your computer, that looks after itself. By Wildhaven Homes.">
+<link rel="icon" href="img/mark.svg"><meta property="og:image" content="img/hero.jpg">
+<style>:root{--ink:#241a12;--soft:#6b5a4a;--warm:#c8642c;--cream:#fbf6ef;--line:#eadfd1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.6 "Iowan Old Style","Palatino Linotype",Georgia,serif;color:var(--ink);background:var(--cream)}
+.sans,nav,.btn,.eyebrow,footer{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+nav{position:absolute;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 5vw;z-index:2;color:#fff}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px}
+.brand img{width:34px;height:34px;border-radius:8px;background:var(--cream)}
+nav a.link{color:#fff;text-decoration:none;font-size:15px;opacity:.9}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;background:#1a120c url(img/hero.jpg) center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,6,.55) 0%,rgba(20,12,6,.1) 35%,rgba(20,12,6,.78) 100%)}
+.hero .in{position:relative;max-width:1100px;width:100%;margin:0 auto;padding:0 5vw 9vh}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.85;margin:0 0 14px}
+h1{font-weight:400;font-size:clamp(40px,6vw,76px);line-height:1.04;letter-spacing:-.015em;margin:0 0 18px;max-width:14ch}
+.hero p.lede{font-size:clamp(18px,2vw,22px);max-width:34em;margin:0 0 30px;opacity:.92}
+.btn{display:inline-block;background:var(--warm);color:#fff;text-decoration:none;font-weight:600;padding:16px 30px;border-radius:999px;font-size:17px;border:0;cursor:pointer}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.6);margin-left:10px}
+section{max-width:1100px;margin:0 auto;padding:110px 5vw}
+h2{font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.15;margin:0 0 18px;max-width:20ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;margin-top:56px}
+.grid h3{font-weight:600;font-size:20px;margin:14px 0 6px}.grid p{margin:0;color:var(--soft)}
+.num{font-family:-apple-system,sans-serif;font-size:13px;color:var(--warm);letter-spacing:.14em}
+.band{background:#241a12;color:var(--cream)}.band section{padding:96px 5vw;text-align:center}
+.band h2{margin:0 auto 14px}.band p{color:#d9c9b6;max-width:32em;margin:0 auto 30px}
+.cmd{display:none;max-width:640px;margin:22px auto 0;text-align:left}
+.cmd.on{display:block}.cmd code{display:block;background:#140d08;color:#f3dcc4;padding:16px;border-radius:12px;font:14px/1.4 ui-monospace,Menlo,monospace;overflow-x:auto;white-space:nowrap}
+.cmd small{display:block;margin-top:10px;color:#bfae99;font-family:-apple-system,sans-serif;font-size:14px}
+.cmd a{color:#f0a978}
+footer{border-top:1px solid var(--line);max-width:1100px;margin:0 auto;padding:30px 5vw 50px;display:flex;justify-content:space-between;color:var(--soft);font-size:14px}
+footer a{color:var(--soft)}
+</style></head><body>
+<nav><a class="brand" href="https://wildhaven-homes-llc.github.io/"><img src="img/mark.svg" alt="">Wildhaven</a>
+<a class="link" href="https://wildhaven-homes-llc.github.io/hearth/">Hearth</a></nav>
+<header class="hero"><div class="in"><p class="eyebrow">Wildhaven Hearth · Free for Mac</p><h1>Your own AI, at home.</h1><p class="lede">It runs on your computer, never drops the conversation, and takes care of itself so you don't have to.</p><a class="btn" href="#get">Get Hearth</a></div></header>
+<section><h2>A quiet, capable presence in your home.</h2>
+<div class="grid">
+<div><span class="num">01</span><h3>It never drops the conversation</h3><p>Adding, removing or updating anything happens while it keeps answering you.</p></div>
+<div><span class="num">02</span><h3>It looks after itself</h3><p>It watches over its computer, keeps itself current, and knows who it belongs to.</p></div>
+<div><span class="num">03</span><h3>Your life stays at home</h3><p>It lives on your computer, not in someone else's cloud. Private things stay private.</p></div>
+</div></section><div class="band" id="get"><section><h2>Bring Hearth home.</h2><p>Free for Mac. It takes about five minutes, and you can remove it cleanly any time.</p>
+<button class="btn" id="show">Get Hearth for Mac</button>
+<div class="cmd" id="cmd"><code id="line">curl -fsSL https://wildhaven-homes-llc.github.io/hearth/install.sh | bash</code>
+<small>Open Terminal, paste this line, press Return. <button class="btn" id="copy" style="padding:6px 14px;font-size:13px">Copy</button><br>
+Prefer not to? Ask GitHub Copilot: "Give me wildhaven-hearth using <a href="https://kody-w.github.io/grail-layers/skills/rar-easy-mode/SKILL.md">RAR Easy Mode</a> and test it for me."<br>
+<span id="rel">Release details: <a href="registry.json">registry.json</a> · <a href="llms.txt">llms.txt</a></span></small></div>
+</section></div>
 <script>
-  document.getElementById("copy").onclick = function () {
-    var b = this, t = document.getElementById("line").textContent;
-    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () {
-      b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500);
-    });
-  };
-  fetch("registry.json").then(function (r) { return r.json(); }).then(function (reg) {
-    var r = reg.release;
-    document.getElementById("rel").textContent = "Version " + r.version + ". Brainstem engine " +
-      r.kernel.sha256.slice(0, 12) + " (unchanged), layers " + r.grail_layers.revision.slice(0, 7) +
-      ", catalog " + r.catalog.revision.slice(0, 7) + ".";
-  }).catch(function () {});
+show.onclick=function(){cmd.classList.add("on");this.style.display="none"};
+copy.onclick=function(){var b=this;navigator.clipboard.writeText(line.textContent).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1500)})};
+fetch("registry.json").then(function(r){return r.json()}).then(function(g){var r=g.release;rel.insertAdjacentText("beforeend"," · Version "+r.version+", engine "+r.kernel.sha256.slice(0,12)+" (unchanged)")}).catch(function(){});
 </script>
-</body>
-</html>
+<footer><span>© 2026 Wildhaven Homes LLC</span><a href="mailto:wildhavenhomesllc@gmail.com">Contact</a></footer>
+</body></html>
