@@ -5,9 +5,9 @@
 # catalog by their commits. Already have a Brainstem? Hearth is added around it while it keeps answering.
 set -euo pipefail
 HEARTH="${HEARTH_URL:-https://wildhaven-homes-llc.github.io/hearth}"
-GL_REV="7e035a4aa5ca234b5cb0111de981b77a622a3a4e"
-RAR_REV="f86f847951640fc99337b69c81f2baf2273d0cd7"
-KERNEL_SHA="35618683ebc3d1c2bfaff47f60182fd756f3a8de53c53dd907ec1099d631930a"
+GL_REV="93068e622a3f5af2b3a1e92613177ca6998e8ca1"
+RAR_REV="688bf5d899341fe4122652cf2ab3f003274bf943"
+KERNEL_SHA="bd55a7f0bcf5efd3f7966ca39bb146da3c25fda9a0b1ce5ba587919d3c3775f4"
 GL="https://raw.githubusercontent.com/kody-w/grail-layers/$GL_REV"
 RAR="https://raw.githubusercontent.com/kody-w/RAR/$RAR_REV"
 BS="${BRAINSTEM_HOME:-$HOME/.brainstem}"
@@ -15,13 +15,13 @@ KERNEL="$BS/src/rapp_brainstem/brainstem.py"
 say(){ printf '\033[1m%s\033[0m\n' "$*"; }
 case "$(uname)" in Darwin|Linux) ;; *) echo "Wildhaven Hearth needs macOS or Linux (on Windows, use WSL)."; exit 1;; esac
 
-say "Wildhaven Hearth 1.0.0"
+say "Wildhaven Hearth 1.0.1"
 say "Step 1 of 2: the Brainstem and its safety net"
-curl -fsSL "$GL/install.sh" | GRAIL_LAYERS_URL="$GL" GRAIL_LAYERS_RAR="$RAR/stacks/grail-layers" bash
+curl -fsSL "$GL/install.sh" | GRAIL_VERSION=0.6.16 GRAIL_LAYERS_URL="$GL" GRAIL_LAYERS_RAR="$RAR/stacks/grail-layers" bash
 
 have="$(shasum -a 256 "$KERNEL" 2>/dev/null | cut -c1-64 || true)"
 if [ "$have" != "$KERNEL_SHA" ]; then
-  echo "Your Brainstem engine is a different version (${have:0:12}) from the one Hearth 1.0.0 is built for (${KERNEL_SHA:0:12})."
+  echo "Your Brainstem engine is a different version (${have:0:12}) from the one Hearth 1.0.1 is built for (${KERNEL_SHA:0:12})."
   echo "Your Brainstem keeps working as it is; Hearth's packs will be offered when a matching Hearth release is out."
   exit 2
 fi

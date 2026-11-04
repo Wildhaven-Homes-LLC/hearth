@@ -1,0 +1,21 @@
+{
+  "schema": "hearth-release/1.0",
+  "name": "Wildhaven Hearth",
+  "version": "1.0.1",
+  "kernel": {
+    "what": "the Brainstem engine (the grail), used exactly as published, never edited",
+    "repository": "kody-w/rapp-installer",
+    "file": "brainstem.py",
+    "sha256": "bd55a7f0bcf5efd3f7966ca39bb146da3c25fda9a0b1ce5ba587919d3c3775f4",
+    "version": "0.6.16"
+  },
+  "grail_layers": {
+    "repository": "kody-w/grail-layers",
+    "revision": "cb4250e289126de7d5f83315e69fb73f16dac091"
+  },
+  "catalog": {
+    "repository": "kody-w/RAR",
+    "revision": "f86f847951640fc99337b69c81f2baf2273d0cd7",
+    "pack": "wildhaven-hearth"
+  }
+}
